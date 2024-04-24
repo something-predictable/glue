@@ -1,0 +1,20 @@
+{
+  "implementations": {
+    "@riddance/service": {
+      "implementation": "@riddance/aws-host",
+      "version": "0.0.7"
+    }
+  },
+  "services": {
+    "builder": {
+      "source": "git@github.com:something-predictable/builder.git",
+      "env": {
+        "GITHUB_ACCESS_TOKEN": "$ASK(Create a Github access token with admin:org_hook, admin:repo_hook, read:user, and repo scopes here: https://github.com/settings/tokens)",
+        "ALLOW_REPOS": "git@github.com:something-predictable/glue.git,git@github.com:something-predictable/example-node-service.git,git@github.com:something-predictable/builder.git"
+      }
+    },
+    "example-service": {
+      "source": "git@github.com:something-predictable/example-node-service.git"
+    }
+  }
+}
